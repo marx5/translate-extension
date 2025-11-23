@@ -234,7 +234,8 @@ MIT License
 
 ## Screenshots / Ảnh Chụp Màn Hình
 
-*Extension popup with translation result / Popup extension với kết quả dịch*
+<img width="437" height="511" alt="image" src="https://github.com/user-attachments/assets/8a1cc12b-fdd4-42d8-90f9-f53bc1d3ce2c" />
+<img width="437" height="511" alt="image" src="https://github.com/user-attachments/assets/2f216a8e-b067-43a8-a661-a05c7130fe50" />
 
 ---
 
