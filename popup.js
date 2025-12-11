@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const speakSource = document.getElementById('speakSource');
   const speakTarget = document.getElementById('speakTarget');
   const translationService = document.getElementById('translationService');
+  const swapLangs = document.getElementById('swapLangs');
 
   let detectedSourceLang = 'en'; // Store detected language for auto mode
 
@@ -43,6 +44,32 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   translateBtn.addEventListener('click', doTranslate);
+
+  // Swap languages functionality
+  swapLangs.addEventListener('click', () => {
+    const currentSource = sourceLang.value;
+    const currentTarget = targetLang.value;
+    
+    // Don't swap if source is auto-detect
+    if (currentSource === 'auto') {
+      return;
+    }
+    
+    // Swap the values
+    sourceLang.value = currentTarget;
+    targetLang.value = currentSource;
+    
+    // Save the new language selection
+    chrome.storage.sync.set({
+      sourceLang: sourceLang.value,
+      targetLang: targetLang.value
+    });
+    
+    // If there's text and a translation, re-translate
+    if (inputText.value.trim() && !resultArea.classList.contains('hidden')) {
+      doTranslate();
+    }
+  });
 
   // Text-to-speech functionality
   speakSource.addEventListener('click', () => {

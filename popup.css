@@ -49,9 +49,26 @@ select:hover {
   background-color: var(--hover-color);
 }
 
-.arrow {
-  color: var(--secondary-text);
-  font-size: 12px;
+.swap-btn {
+  background: white;
+  border: 1px solid var(--border-color);
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--primary-color);
+  transition: all 0.2s;
+  min-width: 32px;
+}
+
+.swap-btn:hover {
+  background-color: var(--hover-color);
+  border-color: var(--primary-color);
+  transform: rotate(180deg);
+}
+
+.swap-btn:active {
+  transform: scale(0.9) rotate(180deg);
 }
 
 .content {
